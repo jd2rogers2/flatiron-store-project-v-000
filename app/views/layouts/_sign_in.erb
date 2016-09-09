@@ -1,0 +1,10 @@
+<%# link_to "Home", root_path %>
+<% if is_logged_in? %>
+  <%# "Welcome #{current_user.email}" %>
+  <%# link_to "log out", blah %>
+  <%# link_to "Cart", cart_path(current_user.current_cart), if current_user.current_cart %>
+<% else %>
+  <%# link_to "sign up", new_registration_path %>
+  <%# link_to "log in", blah %>
+<% end %>
+

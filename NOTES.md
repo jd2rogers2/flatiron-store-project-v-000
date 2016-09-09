@@ -1,0 +1,1 @@
+finished with models on to views and controllers next

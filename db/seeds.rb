@@ -13,3 +13,20 @@ Item.all.each do |item|
   item.save
   counter += 1
 end
+
+10.times do |i|
+  User.create(email: "email_#{i}@email.com", password: "password_#{i}")
+end
+
+# 10.times do |i|
+#   Cart.create(name: "cart_#{i}", user_id: i)
+# end
+
+# 10.times do |i|
+#   Item.create(title: "item_#{i}")
+# end
+
+# 10.times do |i|
+#   LineItem.create(cart_id: i, item_id: i)
+# end
+
