@@ -10,7 +10,5 @@ Rails.application.routes.draw do
   resources :line_items, only: [:create]
   resources :orders, only: [:show]
 
-  post 'carts/:id/checkout', to: 'carts#checkout', as: 'checkout'
-  get '/users/auth/facebook/callback', to: 'session#create'
-
+  post 'carts/:id', to: 'carts#show', as: 'checkout'
 end

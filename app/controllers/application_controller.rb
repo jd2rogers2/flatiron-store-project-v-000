@@ -11,4 +11,7 @@ class ApplicationController < ActionController::Base
   #   # binding.pry
   # end
 
+  def current_cart
+    current_user.current_cart || current_user.carts.find_by(id: params[:id])
+  end
 end

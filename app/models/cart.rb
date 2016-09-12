@@ -19,4 +19,13 @@ class Cart < ActiveRecord::Base
     self.items.each {|item| sum += item.price}
     sum
   end
+
+  def checkout
+    self.line_items.each do |li|
+      li.item.inventory -= li.quantity
+      li.item.save
+    end
+    self.user.current_cart = nil
+    self.user.save
+  end
 end

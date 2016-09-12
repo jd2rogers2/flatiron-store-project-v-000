@@ -1,5 +1,8 @@
 class CartsController < ApplicationController
   def show
-    @cart = current_user.current_cart
-  end 
+    if params[:checkout] == "true"
+      current_cart.checkout
+      redirect_to cart_path
+    end
+  end
 end
