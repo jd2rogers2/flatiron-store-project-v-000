@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
 
   def current_cart=(cart)
     if cart != nil
+      self.carts << cart if !self.carts.include?(cart)
       self.current_cart_id = self.carts.find_by(id: cart.id).id
     else
       self.current_cart_id = nil
